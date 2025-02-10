@@ -29,7 +29,11 @@ public class User {
 
     private  String password;
 
-    private USER_ROLE role;
+    @Enumerated(EnumType.STRING)
+    private USER_ROLE role=USER_ROLE.ROLE_COSTUMER;
+
+
+
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
